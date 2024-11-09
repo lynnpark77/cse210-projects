@@ -10,7 +10,8 @@ class Program
 
 
         string letter = "";
-        
+        string sign ="";
+
         if (x>=90)
         {
             letter = "A";
@@ -31,8 +32,18 @@ class Program
         {
             letter = "F";
         }
+        
+        int lastDigit = x % 10;
+        if (lastDigit>= 7)
+        {
+            sign = "+";
+        }
+        else if (lastDigit <3)
+        {
+            sign = "-";
+        }
 
-        Console.WriteLine($"Your grade is {letter}.");
+        Console.WriteLine($"Your grade is {letter}{sign}.");
         
         if (x>=70)
         {
