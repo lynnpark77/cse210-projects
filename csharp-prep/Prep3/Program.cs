@@ -10,13 +10,12 @@ class Program
         string number = Console.ReadLine();
         int x = int.Parse(number);
 
-        Console.Write("What is your guess? ");
-        string guess = Console.ReadLine();
-        int y = int.Parse(guess);
-
         string response = "You guessed it!";
         while (response != "You guessed it!")
         {
+            Console.Write("What is your guess? ");
+            string guess = Console.ReadLine();
+            int y = int.Parse(guess);
 
             if (x > y)
             {
