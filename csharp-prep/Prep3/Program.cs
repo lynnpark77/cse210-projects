@@ -15,7 +15,7 @@ class Program
         int y = int.Parse(guess);
 
         string response = "You guessed it!";
-        while (response == "You guessed it!")
+        while (response != "You guessed it!")
         {
 
             if (x > y)
