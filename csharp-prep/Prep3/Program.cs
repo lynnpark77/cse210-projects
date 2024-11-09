@@ -7,7 +7,8 @@ class Program
     static void Main(string[] args)
     {
         string response = "You guessed it.";
-        do
+        
+        while (response == "You guessed it")
         {
             Console.Write("What is the magic number?  ");
             string number = Console.ReadLine();
@@ -16,22 +17,21 @@ class Program
             Console.Write("What is your guess? ");
             string guess = Console.ReadLine();
             int y = int.Parse(guess);
-            
+
             if (x > y)
             {
-                Console.WriteLine("Higher");
+                response = "Higher";
             }
             else if (x < y)
             {
-                Console.WriteLine("Lower");
+                response = "Lower";
             }
             else
             {
-                Console.WriteLine("You guessed it!");
+                response = "You guessed it!";
             }
-
-        } while (response == "You guessed it");
-
-       
+            
+            Console.WriteLine($"{response}");
+        } 
     }
 }
