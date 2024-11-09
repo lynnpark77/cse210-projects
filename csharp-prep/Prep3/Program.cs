@@ -11,21 +11,20 @@ class Program
         //string magicNumber = Console.ReadLine();
         //int x = int.Parse(magicNumber);
         Random randomGenerator = new Random();
-        int x = randomGenerator.Next(1,101);
+        int magicNumber = randomGenerator.Next(1,101);
 
-        int y = -1;
+        int guess = -1;
 
-        while ( x != y)
+        while ( magicNumber != guess)
         {
             Console.Write("What is your guess? ");
-            string guess = Console.ReadLine();
-            int y = int.Parse(guess);
+            guess = int.Parse(Console.ReadLine());
 
-            if (x > y)
+            if (magicNumber > guess)
             {
                 Console.WriteLine("Higher");
             }
-            else if (x < y)
+            else if (magicNumber < guess)
             {
                 Console.WriteLine("Lower");
             }
