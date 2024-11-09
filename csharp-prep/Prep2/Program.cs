@@ -34,11 +34,11 @@ class Program
         }
 
         int lastDigit = x % 10;
-        if ((x<90 || x>=60) && lastDigit>= 7)
+        if ((x<90 && x>=60) && lastDigit>= 7)
         {
             sign = "+";
         }
-        else if ((x<90 || x>=60) && lastDigit <3)
+        else if (x>=60 && lastDigit <3)
         {
             sign = "-";
         }
