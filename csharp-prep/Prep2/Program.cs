@@ -32,15 +32,19 @@ class Program
         {
             letter = "F";
         }
-        
+
         int lastDigit = x % 10;
-        if (lastDigit>= 7)
+        if ((x>=90 || x<60) && lastDigit>= 7)
         {
             sign = "+";
         }
-        else if (lastDigit <3)
+        else if ((x>=90 || x<60) && lastDigit <3)
         {
             sign = "-";
+        }
+        else
+        {
+            sign = "";
         }
 
         Console.WriteLine($"Your grade is {letter}{sign}.");
