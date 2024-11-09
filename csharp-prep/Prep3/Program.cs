@@ -6,12 +6,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What is the magic number?  ");
-        string number = Console.ReadLine();
-        int x = int.Parse(number);
 
-        string response = "You guessed it!";
-        while (response != "You guessed it!")
+        //Console.Write("What is the magic number?  ");
+        //string magicNumber = Console.ReadLine();
+        //int x = int.Parse(magicNumber);
+        Random randomGenerator = new Random();
+        int x = randomGenerator.Next(1,101);
+
+        int y = -1;
+
+        while ( x != y)
         {
             Console.Write("What is your guess? ");
             string guess = Console.ReadLine();
@@ -19,18 +23,17 @@ class Program
 
             if (x > y)
             {
-                response = "Higher";
+                Console.WriteLine("Higher");
             }
             else if (x < y)
             {
-                response = "Lower";
+                Console.WriteLine("Lower");
             }
             else
             {
-                response = "You guessed it!";
+                Console.WriteLine("You guessed it!");
             }
-        
-            Console.WriteLine($"{response}");
         }
+        
     } 
 }
