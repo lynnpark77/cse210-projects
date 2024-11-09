@@ -8,33 +8,39 @@ class Program
         string userInput = Console.ReadLine();
         int x = int.Parse(userInput);
 
+
+        string letter = "";
+        
         if (x>=90)
         {
-            Console.WriteLine("A");
+            letter = "A";
         }
         else if (x>=80 && x<90)
         {
-            Console.WriteLine("B");
+            letter = "B";
         }
         else if (x>=70 && x<80)
         {
-            Console.WriteLine("C");
+            letter = "C";
         }
         else if (x>=60 && x<70)
         {
-            Console.WriteLine("D");
+            letter = "D";
         }
         else
         {
-            Console.WriteLine("F");
+            letter = "F";
         }
-            if (x>=70)
-            {
-                Console.WriteLine("Congratualations! You passed the class");
-            }
-            else
-            {
-                Console.WriteLine("You didn't pass. Try again");
-            }
+
+        Console.WriteLine($"Your grade is {letter}.");
+        
+        if (x>=70)
+        {
+            Console.WriteLine("Congratualations! You passed the class");
+        }
+        else
+        {
+            Console.WriteLine("You didn't pass. Try again");
+        }
     }
 }
