@@ -7,7 +7,7 @@ class Program
     {
         List<int> numbers = new List<int>();
 
-        Console.WriteLine("Enter a list of both positive and negative numbers, type 0 when finished.");
+        Console.WriteLine("Enter a list of numbers, type 0 when finished.");
 
         int userInput = -1;
         while (userInput != 0)
