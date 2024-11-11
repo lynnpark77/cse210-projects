@@ -5,6 +5,12 @@ class ProgramteN
 {
     static void Main(string[] args)
     {
+        DisplayWelcome();
+        string name = PromptUserName();
+        int number = PromptUserNumber();
+        int square = SquareNumber(number);
+        DisplayResult(name,square);
+        
         static void DisplayWelcome()
         {
             Console.WriteLine("Welcome to the program!");
