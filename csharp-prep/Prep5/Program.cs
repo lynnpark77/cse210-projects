@@ -10,7 +10,7 @@ class ProgramteN
         int number = PromptUserNumber();
         int square = SquareNumber(number);
         DisplayResult(name,square);
-        
+
         static void DisplayWelcome()
         {
             Console.WriteLine("Welcome to the program!");
@@ -33,7 +33,7 @@ class ProgramteN
         }
         static int SquareNumber(int number)
         {
-            int square = number^2;
+            int square = number * number;
             return square;
         }
         static void DisplayResult(string name,int square)
