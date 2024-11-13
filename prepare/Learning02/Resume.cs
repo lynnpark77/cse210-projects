@@ -6,13 +6,13 @@ public class Resume
     public Resume()
     {    
     }
-    public void DisplayResume()
+    public void Display()
     {
         Console.WriteLine($"Name: {_name}");
         Console.WriteLine("Jobs: ");
         foreach (Job job in _jobs)
         {
-            job.DisplayResume();
+            job.Display();
         }
     }
 
