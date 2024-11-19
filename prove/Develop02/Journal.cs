@@ -1,12 +1,21 @@
+using System.IO;
 public class Journal
 {
-    public List<Entry> _entries;
+    public List<Entry> theJournal = new List<Entry>();
     public void AddEntry(Entry newEntry)
     {
+        
+        theJournal.Add(newEntry);
     }
     
     public void DisplayAll()
     {
+        
+        foreach (Entry entry in theJournal)
+        {
+            entry.Display();
+        }
+       
 
     }
 
@@ -17,7 +26,7 @@ public class Journal
 
     public void LoadFromFile(string file)
     {
-        
+
     }
 
 }
