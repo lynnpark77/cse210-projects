@@ -43,7 +43,8 @@ public class Journal
             string entryDate = parts[0].Trim();
             string entryPrompt = parts[1].Trim();
             string entryText = parts[2].Trim();
-            Entry newEntry = new Entry(entryDate,entryPrompt,entryText);
+            string entryGratitude = parts[3].Trim();
+            Entry newEntry = new Entry(entryDate,entryPrompt,entryText,entryGratitude);
             journalEntries.Add(newEntry);
         }
         _theJournal = journalEntries;
