@@ -28,7 +28,9 @@ do
         Console.WriteLine($"{_promptText}");
         Console.Write(">");
         string _entryText = Console.ReadLine();
-        Entry newEntry = new Entry(_date, _promptText, _entryText);
+        Console.WriteLine("What are you thankful for today? ");
+        string _gratitude = Console.ReadLine();
+        Entry newEntry = new Entry(_date, _promptText, _entryText, _gratitude);
         _theJournal.AddEntry(newEntry);
         Console.WriteLine("Entry added successfully.");
     

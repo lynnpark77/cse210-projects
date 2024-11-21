@@ -6,11 +6,12 @@ public class Entry
     // I added a prompt for the user to write things they are thankful for.  
     public string _gratitude = "";
     
-    public Entry(string date, string promptText, string entryText)
+    public Entry(string date, string promptText, string entryText, string gratitude)
     {
         _date = date;
         _promptText = promptText;
         _entryText = entryText;
+        _gratitude = gratitude;
     
     }
 
@@ -18,10 +19,11 @@ public class Entry
     {
         Console.WriteLine($"Date: {_date} - Prompt: {_promptText}");
         Console.WriteLine($"{_entryText}");
+        Console.WriteLine($"{_gratitude}");
     }
     public string CreateString()
     {
-        string text = $"Date: {_date} ~~ Prompt: {_promptText} ~~ {_entryText}";
+        string text = $"Date: {_date} ~~ Prompt: {_promptText} ~~ {_entryText} ~~ {_gratitude}";
         return text;
     }
 
