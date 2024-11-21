@@ -29,7 +29,8 @@ do
         Console.Write(">");
         string _entryText = Console.ReadLine();
         Entry newEntry = new Entry(_date, _promptText, _entryText);
-        newEntry.Display();
+        theJournal.AddEntry(newEntry);
+        Console.WriteLine("Entry added successfully.");
     
     }
     else if(response == 2)
@@ -38,9 +39,19 @@ do
 
     }
 
-    // else if(response == 3)
-    // {
+    else if(response == 3)
+    {
+        Console.WriteLine("What is the file name? ");
+        string fileName = Console.ReadLine();
+        theJournal.LoadFromFile(fileName);
 
-    // }
+    }
+
+    else if(response == 4)
+    {
+        Console.WriteLine("What is the file name? ");
+        string fileName = Console.ReadLine();
+        theJournal.SaveToFile(fileName);
+    }
 
 } while (response != 5);
