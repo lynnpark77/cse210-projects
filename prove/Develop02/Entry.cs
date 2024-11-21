@@ -19,5 +19,10 @@ public class Entry
         Console.WriteLine($"Date: {_date} - Prompt: {_promptText}");
         Console.WriteLine($"{_entryText}");
     }
+    public string CreateString()
+    {
+        string text = $"Date: {_date} ~~ Prompt: {_promptText} ~~ {_entryText}";
+        return text;
+    }
 
 }

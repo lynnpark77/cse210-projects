@@ -2,8 +2,8 @@ using System;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 
-Journal theJournal = new Journal();
-PromptGenerator promptGenerator = new PromptGenerator();
+Journal _theJournal = new Journal();
+PromptGenerator _promptGenerator = new PromptGenerator();
 
 Console.WriteLine("Welcome to the Journal Program!");
 
@@ -24,18 +24,18 @@ do
     {
         DateTime theCurrentTime = DateTime.Now;
         string _date = theCurrentTime.ToShortDateString();
-        string _promptText = promptGenerator.GetRandomPrompt();
+        string _promptText = _promptGenerator.GetRandomPrompt();
         Console.WriteLine($"{_promptText}");
         Console.Write(">");
         string _entryText = Console.ReadLine();
         Entry newEntry = new Entry(_date, _promptText, _entryText);
-        theJournal.AddEntry(newEntry);
+        _theJournal.AddEntry(newEntry);
         Console.WriteLine("Entry added successfully.");
     
     }
     else if(response == 2)
     {
-        theJournal.DisplayAll();
+        _theJournal.DisplayAll();
 
     }
 
@@ -43,7 +43,8 @@ do
     {
         Console.WriteLine("What is the file name? ");
         string fileName = Console.ReadLine();
-        theJournal.LoadFromFile(fileName);
+        _theJournal.LoadFromFile(fileName);
+        _theJournal.DisplayAll();
 
     }
 
@@ -51,7 +52,7 @@ do
     {
         Console.WriteLine("What is the file name? ");
         string fileName = Console.ReadLine();
-        theJournal.SaveToFile(fileName);
+        _theJournal.SaveToFile(fileName);
     }
 
 } while (response != 5);
