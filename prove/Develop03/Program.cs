@@ -10,26 +10,28 @@ class Program
         while(true)
         {
             Console.Clear();
-            Console.WriteLine(scripture.GetDisplayText());
+            Console.WriteLine(reference.GetDisplayText() +" "+ scripture.GetDisplayText());
 
             if (scripture.IsCompletelyHidden())
             {
                 break;
             }
 
-            Console.WriteLine("/nPress Enter to continue or type 'quit' to finish: ");
+            Console.WriteLine("\nPress Enter to continue or type 'quit' to finish: ");
             string userInput = Console.ReadLine();
 
             if(userInput == "quit")
             {
                 break;
             }
+            else
+            {
+                scripture.HideRandomWords(3);
+            }
 
-            scripture.HideRandomWords(3);
+
+            
         }
-
-
-        Console.WriteLine(scripture);
         
     }
 }

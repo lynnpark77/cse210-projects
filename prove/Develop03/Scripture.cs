@@ -8,6 +8,7 @@ public class Scripture
     public Scripture (Reference reference, string text)
     {
         _reference = reference;
+        _words = new List<Word>();
         string[] words = text.Split(' ');
 
         foreach (string word in words)
@@ -45,9 +46,9 @@ public class Scripture
 
     public bool IsCompletelyHidden()
     {
-        for (int i = 0; i < _words.Count; i++)
+        foreach (Word word in _words)
         {
-            if ( i != _words.Count)
+            if ( !word.IsHidden())
             {
                 return false;
             }
