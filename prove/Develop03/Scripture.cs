@@ -25,12 +25,36 @@ public class Scripture
     }
     public string GetDisplayText()
     {
-        
+        string text = "";
+        foreach (Word word in _words)
+        {
+            if (word.IsHidden())
+            {
+                text += new string('_', word.GetDisplayText().Length);
+            }
+            else
+            {
+                text += word.GetDisplayText();
+            }
+            text += " ";
+        }
+
+        return text;
+
 
     }
 
     public bool IsCompletelyHidden()
     {
+        for (int i = 0; i < _words.Count; i++)
+        {
+            if ( i != _words.Count)
+            {
+                return false;
+            }
+        }
+
+        return true;
 
     }
 
