@@ -10,11 +10,12 @@ class Program
         scriptureLibrary.AddScripture(new Reference("Philippians", 4, 13), "I can do all things through Christ which strengtheneth me.");
 
         Scripture randomScripture = scriptureLibrary.GetRandomScripture();
+        
 
         while(true)
         {
             Console.Clear();
-            Console.WriteLine(randomScripture.GetDisplayText());
+            Console.WriteLine(randomScripture.reference.GetDisplayText() + " " + randomScripture.GetDisplayText());
 
             Console.WriteLine("\nPress Enter to continue or type 'quit' to finish: ");
             string userInput = Console.ReadLine();
