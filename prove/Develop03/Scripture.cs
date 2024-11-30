@@ -17,6 +17,10 @@ public class Scripture
         }
 
     }
+    public Reference GetReference()
+    {
+        return _reference;
+    }
 
     public void HideRandomWords(int numberToHide)
     {
