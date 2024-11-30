@@ -1,5 +1,6 @@
 using System;
 
+//Exceeding requirement : I made a library class to get the scriptures randomly from the library of scriptures.
 Library scriptureLibrary = new Library();
 scriptureLibrary.AddScripture(new Reference("Provebs", 3, 5, 6), "Trust in the Lord with all thine heart and lean not unto thine own understanding. In all thy ways acknowledge him and he shall direct thy paths.");
 scriptureLibrary.AddScripture(new Reference("John", 3, 16), "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");

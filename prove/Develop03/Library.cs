@@ -1,5 +1,5 @@
 
-//I made a library class to get the scriptures randomly from the library of scriptures.
+//Exceeding requirement : I made a library class to get the scriptures randomly from the library of scriptures.
 public class Library
 {
     private List<Scripture> _scriptures;
