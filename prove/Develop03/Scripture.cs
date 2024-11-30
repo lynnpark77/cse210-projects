@@ -54,8 +54,6 @@ public class Scripture
             }
         }
 
-
-
     }
     public string GetDisplayText()
     {
@@ -74,8 +72,6 @@ public class Scripture
         }
 
         return text;
-
-
     }
 
     public bool IsCompletelyHidden()
@@ -91,6 +87,4 @@ public class Scripture
         return true;
 
     }
-
- 
 }
