@@ -37,11 +37,7 @@ public class Scripture
             }
         }
         
-        int wordsToHide = numberToHide;
-        if(nonHiddenWordsCount < numberToHide)
-        {
-            wordsToHide = nonHiddenWordsCount;
-        }
+        int wordsToHide = Math.Min(numberToHide, nonHiddenWordsCount);
         
         while(hiddenCount < numberToHide)
         {
@@ -51,6 +47,10 @@ public class Scripture
             {
                 _words[index].Hide();
                 hiddenCount++;
+            }
+            if (IsCompletelyHidden())
+            {
+                break;
             }
         }
 
