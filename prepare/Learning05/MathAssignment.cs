@@ -21,9 +21,9 @@ public class MathAssignment : Assignment
     }
 
 
-    public string DisplyHomework()
+    public string GetHomeworkList()
     {
-        return $"{GetSummary()}, Section{_section} Problems{}  "
+        return $"Section {_section} Problems {_problems}";
 
     }
 }
