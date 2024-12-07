@@ -3,23 +3,26 @@ using System.Net.Sockets;
 
 public class Customer
 {
-    private string _customerName = "";
+    private string _customer = "";
     private Address _address;
 
     public Customer(string name, Address address)
     {
-        _customerName = name;
+        _customer = name;
         _address = address;
     }
 
-    // public string GetName()
-    // {
-    //     return _customerName;
-    // }
-
-    public string GetShippingInfo()
+    public string GetName()
     {
-        return $"Customer :{_customerName} \n{_address}";
+        return _customer;
+    }
+    public void SetName(string name)
+    {
+        _customer = name;
+    }
+    public bool IsUSA()
+    {
+        return _address.IsUSA();
     }
 
 

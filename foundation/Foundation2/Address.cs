@@ -7,7 +7,7 @@ public class Address
 
     public string GetAddress()
     {
-        return $"Address : {_street}\n {_city},{_state} \n{_country}";
+        return $"Address : {_street},{_city},{_state},{_country}";
 
     }
     public Address(string street, string city, string state, string country)
@@ -20,10 +20,7 @@ public class Address
 
     public bool IsUSA()
     {
-        if (_country == "USA")
-        {
-            return true;
-        }
+        return _country.ToLower() == "usa";
     }
 
 }

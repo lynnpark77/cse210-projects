@@ -1,12 +1,15 @@
+using System;
+using System.Collections.Generic;
 public class Order
 {
     List<Product> _products = new List<Product>();
     private Customer _customer;
 
-    public Order(Customer customer)
+    public Order(Customer name, Address address)
     {
-        _customer = customer;
+        _customer = name;
         _products = new List<Product>();
+    
     }
 
     public void AddProduct(Product product)
@@ -14,36 +17,38 @@ public class Order
         _products.Add(product);
     }
 
-    public double CalculateTotalCost()
+    public decimal CalculateTotalCost()
     {
-        double totalCost = 0;
+        decimal totalCost = 0m;
         foreach (Product product in _products)
         {
             totalCost += product.CalculateCost();
         }
-        if ( Address InUsa() = true)
+
+        decimal shippingCost = 0m;
+        if (_customer.IsUSA())
         {
-            totalCost += 5;
-            return totalCost;
+            shippingCost = 5m;
         }
         else
         {
-            totalCost += 35;
-            return totalCost;
+            shippingCost = 35m;
         }
+        totalCost += shippingCost;
+        return totalCost;
     }
     public string GetPackingLabel()
     {
         string packingLabel ="";
         foreach (Product product in _products)
         {
-          packingLabel += $"{product.GetPackingInfo()}";
+          packingLabel +=$"{product.GetPackingInfo()}\n";
         }
         return packingLabel;
         
     }
-    public string GetShippingLabel()
+    public string GetShippingLabel(Customer name, Address address)
     {
-        return $"{_customerName} {GetAddress()}";
+        return $"Customer: {name.GetName()}\n{address.GetAddress()}";
     }
 }
