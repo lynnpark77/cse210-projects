@@ -18,6 +18,7 @@ class Program
         Product product3 = new Product("Electric Kettle", "EK-202",49.99m, 3);
         Product product4 = new Product("Smartwatch", "SW-303", 149.99m, 1);
         Product product5 = new Product("Fitness Tracker", "FT-304", 99.99m, 1);
+        Product product6 = new Product("Toaster","T-203", 25.99m, 1);
 
         Order order1 = new Order(customer1,address1);
         order1.AddProduct(product1);
@@ -29,6 +30,7 @@ class Program
 
         Order order3 = new Order(customer3,address3);
         order3.AddProduct(product5);
+        order3.AddProduct(product6);
 
         
         Console.WriteLine(order1.GetShippingLabel(customer1,address1));
