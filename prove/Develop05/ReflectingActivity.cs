@@ -60,7 +60,7 @@ public class ReflectingActivity : Activity
         Console.ReadLine();
         
         Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
-        Console.Write("You may begin in:");
+        Console.Write("You may begin in: ");
         ShowCountDown(5);
         Console.Clear();
 
