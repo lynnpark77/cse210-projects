@@ -15,31 +15,31 @@ class Program
             Console.WriteLine("  2.Start reflecting activity");
             Console.WriteLine("  3.Start listing activity");
             Console.WriteLine("  4.Quit");
-            Console.Write("Select a choice from the menu:");
+            Console.Write("Select a choice from the menu: ");
             string userInput = Console.ReadLine();
             response = int.Parse(userInput);
 
             switch (userInput)
             {
-                case 1 :
+                case "1" :
                 Console.Clear();
                 BreathingActivity breathing = new BreathingActivity();
                 breathing.Run();
                 break;
 
-                case 2 :
+                case "2" :
                 Console.Clear();
                 ReflectingActivity reflecting = new ReflectingActivity();
                 reflecting.Run();
                 break;
 
-                case 3 :
-                Console.Clear();
-                ListingActivity listing = new ListingActivity();
-                listing.Run();
-                break;
+                // case 3 :
+                // Console.Clear();
+                // ListingActivity listing = new ListingActivity();
+                // listing.Run();
+                // break;
 
-                case 4 :
+                case "4" :
                 Console.WriteLine("See you next time!!!");
                 return;
 
