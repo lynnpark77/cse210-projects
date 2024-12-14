@@ -6,7 +6,7 @@ public class ReflectingActivity : Activity
 
     }
 
-    private List<string> prompts = new List<string>
+    private List<string> _prompts = new List<string>
     {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
@@ -14,7 +14,7 @@ public class ReflectingActivity : Activity
         "Think of a time when you did something truly selfless."
     };
 
-    private List<string> questions = new List<string>
+    private List<string> _questions = new List<string>
     {
         "Why was this experience meaningful to you?",
         "Have you ever done anything like this before?",
@@ -47,8 +47,8 @@ public class ReflectingActivity : Activity
     private string GetRandomPrompt()
     {
         Random random = new Random();
-        int index = random.Next(prompts.Count);
-        return prompts[index];
+        int index = random.Next(_prompts.Count);
+        return _prompts[index];
 
     }
 
@@ -69,8 +69,8 @@ public class ReflectingActivity : Activity
     private string GetRandomQuestion()
     {
         Random random = new Random();
-        int index = random.Next(questions.Count);
-        return questions[index];
+        int index = random.Next(_questions.Count);
+        return _questions[index];
     }
 
     public void DisplayQuestions()

@@ -1,14 +1,12 @@
 public class ListingActivity : Activity 
 {
-    public ListtingActivity() : base ( "Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
+    public ListingActivity() : base ( "Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
     {
 
     }
 
-    private int _count ;
-    private List<string> prompts ;
-
-    private List<string> prompts = new List<string>
+    private int _count = 0;
+    private List<string> _prompts = new List<string>
     {
         "Who are people that you appreciate? ",
         "What are personal strengths of yours? ",
@@ -27,40 +25,38 @@ public class ListingActivity : Activity
 
         while(DateTime.Now < endTime)
         {
-            GetRandomPrompt();
-            ShowSpinner(5);
-            GetListFromUser();
+            Console.WriteLine("List as many responses you can to the following prompt:");
+            Console.WriteLine($" ---{GetRandomPrompt()}---");
+            Console.Write("You may begin in: ");
+            ShowCountDown(5);
+            Console.WriteLine();
+            List<string> userResponses = GetListFromUser();
+            Console.WriteLine($"You listed {userResponses.Count} items! ");
             Console.WriteLine();
         } 
         DisplayEndingMessage(); 
     }
 
-    private void GetRandomPrompt()
+    private string GetRandomPrompt()
     {
         Random random = new Random();
-        int index = random.Next(prompts.Count);
-        return prompts[index];
+        int index = random.Next(_prompts.Count);
+        return _prompts[index];
     }
 
     private List<string> GetListFromUser()
     {
-        Console.WriteLine("List as many responses you can to the following prompt:");
-        Console.WriteLine($" ---{GetRandomPrompt()}---");
-        Console.Write("You may begin in: ");
-        ShowCountDown(5);
-
+        List<string> userResponse = new List<string>();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
         while(DateTime.Now < endTime)
         {
-            Console.Write(">");
+            Console.Write("> ");
             string response = Console.ReadLine();
-            List<string> userResponse = new List<string>();
             userResponse.Add(response);
         }
-
-        Console.WriteLine($"You listed {userResponse.Count} items!");
-        Console.WriteLine();
+        return userResponse;
+       
     }
 
 }

@@ -33,11 +33,11 @@ class Program
                 reflecting.Run();
                 break;
 
-                // case 3 :
-                // Console.Clear();
-                // ListingActivity listing = new ListingActivity();
-                // listing.Run();
-                // break;
+                case "3" :
+                Console.Clear();
+                ListingActivity listing = new ListingActivity();
+                listing.Run();
+                break;
 
                 case "4" :
                 Console.WriteLine("See you next time!!!");
