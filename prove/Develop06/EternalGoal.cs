@@ -7,11 +7,7 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        _amountComplete ++;
-        if (IsComplete())
-        {
-            Console.WriteLine($"");
-        }
+        Console.WriteLine($"You earned {_points} in Eternal Goal!!");
     }
 
     public override bool IsComplete()
@@ -21,6 +17,6 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+        return $"{_shortName},{_description},{_points}";
     }
 }

@@ -158,10 +158,23 @@ public class GoalManager
     public void LoadGoals()
     {
         Console.Write("What is the filename for the goal file? ");
-        string fileName = Console.ReadLine();
+        string file = Console.ReadLine();
 
-        string[] lines = System.IO.File.ReadAllLines(file);
-        List<Goal> g = new List<Goal>();
+        // string[] lines = System.IO.File.ReadAllLines(file);
+        // List<Goal> g = new List<Goal>();
+
+        //  foreach (string line in lines)
+        // {
+        //     string[] parts = line.Split(",");
+
+        //     string name = parts[0].Trim();
+        //     string description = parts[1].Trim();
+        //     string points = parts[2].Trim();
+        //     string  = parts[3].Trim();
+            
+            
+        // }
+        // _goals = ;
 
     }
 
